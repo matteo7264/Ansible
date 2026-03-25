@@ -1,0 +1,16 @@
+---
+
+- name: nginx installation
+  hosts: ubuntu
+  become: true
+  gather_facts: true
+  tasks:
+
+  - name: install nginx package
+    apt:
+      name: nginx
+
+
+
+
+
