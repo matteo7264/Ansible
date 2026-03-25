@@ -1,3 +1,3 @@
 # Ansible
 
-This repository contains my experiments and leaning progress with Ansible.
+This repository contains my experiments and learning progress with Ansible.
