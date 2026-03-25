@@ -9,8 +9,4 @@
   - name: install nginx package
     apt:
       name: nginx
-
-
-
-
-
+      state: latest
