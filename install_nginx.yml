@@ -1,12 +1,13 @@
 ---
 
 - name: nginx installation
-  hosts: ubuntu
+  hosts: all
   become: true
   gather_facts: true
   tasks:
 
-  - name: install nginx package
-    apt:
-      name: nginx
+  - name: update and install nginx package
+    package:
+      name: "{{ nginx_package }}"
       state: latest
+      update_cache: yes
