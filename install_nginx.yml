@@ -7,7 +7,9 @@
   tasks:
 
   - name: update and install nginx package
+    tags: nginx
     package:
       name: "{{ nginx_package }}"
       state: latest
       update_cache: yes
+
