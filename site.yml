@@ -13,3 +13,11 @@
       state: latest
       update_cache: yes
 
+  - name: copy default html file to server
+    tags: copy, nginx
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: '0644'
