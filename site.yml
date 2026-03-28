@@ -13,6 +13,13 @@
       state: latest
       update_cache: yes
 
+  - name: start nginx
+    tags: nginx
+    service:
+      name: nginx.service
+      state: started
+      enabled: yes
+
   - name: copy default html file to server
     tags: copy, nginx
     copy:
