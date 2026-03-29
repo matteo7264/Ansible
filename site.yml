@@ -1,30 +1,19 @@
 ---
 
-- name: nginx installation
+- name: first playbook - nginx
   hosts: all
   become: true
   gather_facts: true
-  tasks:
+  pre_tasks:
 
-  - name: update and install nginx package
-    tags: nginx
-    package:
-      name: "{{ nginx_package }}"
-      state: latest
+  - name: update repository index
+    tags: always
+    apt:
       update_cache: yes
+    changed_when: false
 
-  - name: start nginx
-    tags: nginx
-    service:
-      name: nginx.service
-      state: started
-      enabled: yes
-
-  - name: copy default html file to server
-    tags: copy, nginx
-    copy:
-      src: default_site.html
-      dest: /var/www/html/index.html
-      owner: root
-      group: root
-      mode: '0644'
+- hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - nginx
