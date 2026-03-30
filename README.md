@@ -53,10 +53,7 @@ Ansible/
         │   └── main.yml        # Handlers (e.g. restart Nginx on change)
         ├── files/
         │   └── default_site.html  # Custom HTML page deployed to the server
-        ├── defaults/
-        │   └── main.yml        # Default variables (package name, etc.)
-        └── meta/
-            └── main.yml        # Role metadata
+
 ```
 
 ---
